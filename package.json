@@ -9,5 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@googleapis/drive": "^15.0.0",
+    "google-auth-library": "^10.3.0"
+  }
 }
