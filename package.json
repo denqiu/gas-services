@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest --dir tests"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@googleapis/docs": "^6.0.0",
     "@googleapis/drive": "^15.0.0",
     "google-auth-library": "^10.3.0"
   }
