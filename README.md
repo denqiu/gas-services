@@ -1,11 +1,19 @@
-# Installation
+## Installation
 
 Node version: 20.15.1
 
 - This installs all modules: https://www.npmjs.com/package/googleapis.
 - This installs auth library without having to install all modules: https://www.npmjs.com/package/google-auth-library.
 
-# Google Cloud Setup
+## Dev Notes
+
+### DocumentService
+
+- Install `googleapis/drive`, `googleapis/docs`, and `google-auth-library`.
+
+### EmailService
+
+## Google Cloud Setup
 
 ### [GitHub Actions Auth and Detailed Setup Guide](https://github.com/google-github-actions/auth): Click arrows to expand detailed instructions on WIF via direct setup, service account setup, legacy json keys setup.
 ### [Blog Guide](https://cloud.google.com/blog/products/identity-security/enabling-keyless-authentication-from-github-actions)
@@ -17,9 +25,3 @@ Node version: 20.15.1
 1. Create Workload Identity pool. https://cloud.google.com/iam/docs/workload-identity-federation?hl=en&_gl=1
 1. See Github OIDC: https://docs.github.com/en/actions/reference/security/oidc.
 1. Issuer url is `issuer` value in https://token.actions.githubusercontent.com/.well-known/openid-configuration.
-
-## DocumentService
-
-- Install `googleapis/drive`, `googleapis/docs`, and `google-auth-library`.
-
-## EmailService
