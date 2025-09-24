@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 20.15.1
           cache: 'pnpm'
-      - run: pnpm install --frozen-lockfile
+      - run: pnpm install
       - run: pnpm test
 
       # - id: auth
