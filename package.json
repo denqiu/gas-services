@@ -1,22 +1,13 @@
 {
-  "name": "services",
+  "name": "gas-services",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "local": "gcloud auth login",
-    "test": "vitest --dir tests"
+    "test": "pnpm --filter @backend/gas-services test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
-  "dependencies": {
-    "@googleapis/docs": "^6.0.0",
-    "@googleapis/drive": "^15.0.0",
-    "google-auth-library": "^10.3.0"
-  },
-  "devDependencies": {
-    "vitest": "^3.2.4"
-  }
+  "type": "module"
 }

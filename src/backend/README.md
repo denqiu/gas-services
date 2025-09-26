@@ -9,6 +9,8 @@ Node version: 20.15.1
 
 ### DocumentService
 
+Migrated from Google Apps Script.
+
 - Install `googleapis/drive`, `googleapis/docs`, and `google-auth-library`.
 
 ### EmailService
