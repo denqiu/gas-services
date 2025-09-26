@@ -1,5 +1,10 @@
 name: Services
 
+# Add "id-token" with the intended permissions. See https://github.com/google-github-actions/auth?tab=readme-ov-file#usage
+permissions:
+  contents: 'read'
+  id-token: 'write'
+
 on:
   pull_request:
     branches: [ 'main' ]
