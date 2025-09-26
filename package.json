@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "local": "gcloud auth login",
     "test": "vitest --dir tests"
   },
   "keywords": [],
@@ -14,5 +15,8 @@
     "@googleapis/docs": "^6.0.0",
     "@googleapis/drive": "^15.0.0",
     "google-auth-library": "^10.3.0"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
   }
 }

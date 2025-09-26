@@ -1,5 +1,10 @@
 name: Services
 
+# Add "id-token" with the intended permissions. See https://github.com/google-github-actions/auth?tab=readme-ov-file#usage
+permissions:
+  contents: 'read'
+  id-token: 'write'
+
 on:
   pull_request:
     branches: [ 'main' ]
@@ -15,13 +20,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20.15.1
-          cache: 'pnpm'
+      - id: auth
+        uses: google-github-actions/auth@v3
+        with:
+          workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.SERVICE_ACCOUNT }}
       - run: pnpm install
       - run: pnpm test
 
-      # - id: auth
-      #   uses: google-github-actions/auth@v3
-      #   with:
-      #     workload_identity_provider: projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/github
-      #     service_account: my-service-account@my-project.iam.gserviceaccount.com
       # - run: pnpm start 
