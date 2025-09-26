@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "local": "gcloud auth login",
     "test": "vitest --dir tests"
   },
   "keywords": [],
