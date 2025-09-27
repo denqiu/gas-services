@@ -17,6 +17,7 @@ it("Google Auth Library Test", { timeout: 20000 }, async () => {
 	// The modern `fetch` and classic `request` APIs are available
 	try {
 		const res = await auth.fetch(url);
+		console.log("success");
 		return res.data;
 	} catch (error) {
 		console.error(error);
