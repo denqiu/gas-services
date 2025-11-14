@@ -1,10 +1,11 @@
 import { GoogleAuth } from "google-auth-library";
-import { it } from 'vitest';
+import { assert, it } from 'vitest';
+import pinoLogger, { nestedKey, pinoTest, testStream } from "../logger.js";
 
-it("Google Auth Library Test", { timeout: 20000 }, async () => {
+it("Google Auth Library Test", { timeout: 30000 }, async () => {
 	/**
 	 * Application Default Credentials (ADC) test. 
-	 * Note: This works with `gcloud auth login` but not with `gcloud auth application-default login`. It seems the former persists.
+	 * Note: This works with `gcloud auth login` but not with `gcloud auth application-default login`. It seems the former persists. To logout, use `gcloud auth revoke`.
 	 * @link {https://github.com/googleapis/google-auth-library-nodejs?tab=readme-ov-file#application-default-credentials}
 	 * 
 	 * Modified test so that it doesn't require DNS API to be enabled. Cloud Resource Manager API suggested by ChatGPT.
@@ -17,9 +18,11 @@ it("Google Auth Library Test", { timeout: 20000 }, async () => {
 	// The modern `fetch` and classic `request` APIs are available
 	try {
 		const res = await auth.fetch(url);
-		console.log("success");
-		return res.data;
+		pinoLogger.info(res.data, "Google Auth Library Test");
+		// await pinoTest.once(testStream, (log) => {
+		// 	assert.hasAllKeys(Object.keys(log[nestedKey]), ['projectNumber', 'projectId', 'lifecycleState', 'name', 'createTime'], 'Assertion keys failed');
+		// });
 	} catch (error) {
-		console.error(error);
+		pinoLogger.error(error);
 	}
 });
